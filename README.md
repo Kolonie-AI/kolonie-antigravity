@@ -73,9 +73,9 @@ down wrongly, in every installation at once.
 
 ## What Antigravity does differently
 
-Every item below was measured on `antigravity002` against the shipping CLI on
-2026-08-01, not read off documentation — in two cases because the documentation
-is silent and in one because it is wrong.
+Every item below was measured against the shipping CLI on 2026-08-01, not read
+off documentation — in two cases because the documentation is silent and in one
+because it is wrong.
 
 - **There is no `agy mcp` command.** No `add`, no `list`, no `remove`. Servers are
   entries you write into `~/.gemini/config/mcp_config.json`. Every other Colony
