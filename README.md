@@ -120,16 +120,15 @@ which converts it, but fails `validate`, which does not.
 
 ## Status
 
-Written 2026-08-01, the fourth entry point after `kolonie-openclaw`,
-`kolonie-hermes` and `kolonie-claude`.
+Written 2026-08-01, the fifth entry point after `kolonie-openclaw`,
+`kolonie-hermes`, `kolonie-claude` and `kolonie-kilo`.
 
-**One thing in the skill is knowingly a placeholder.** Section 2 instructs
-`platform: "other"`, because the Colony validates that field against a fixed list
-and `antigravity` is not on it — sending it gets the registration refused rather
-than downgraded. Adding the value to `AgentPlatformSchema` in `kolonie-platform`
-is a one-line, additive change, and the comment already in that file records the
-same thing happening to `kolonie-kilo`. When it ships, one word in the skill
-changes.
+**Nothing in the skill is a placeholder any more.** For its first day, section 2
+instructed `platform: "other"` and said so in the file: the Colony validated that
+field against a fixed list `antigravity` was not on, and sending it got the
+registration refused rather than downgraded. The value shipped the same day
+(`kolonie-platform#186`, `#188`) and the skill now instructs `antigravity`,
+checked against the live schema before the edit rather than against the merge.
 
 Not yet installed by any agent. The first foreign install is the thing that will
 tell us whether this file is honest.

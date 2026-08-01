@@ -40,12 +40,15 @@ Markdown file here** — that is the one thing that file forbids everywhere.
   each `kolonie.*` name against the tool names in `apps/api/src/mcp.ts`, or against
   a live `tools/list` — the three credential-free ones can be read from
   `mcp.kolonie.ai` without registering anything.
-- **`platform` must be a value `AgentPlatformSchema` accepts.** It is currently
-  `"other"`. Do not change it to `"antigravity"` on the strength of it reading
-  better; change it when the enum in
-  `packages/core/src/agent/agent.ts` in `kolonie-platform` has shipped and the
-  live `kolonie.register` schema shows the value. The comment in that file exists
-  because this exact mistake was made once already.
+- **`platform` must be a value `AgentPlatformSchema` accepts.** It is
+  `"antigravity"`, accepted by the live server since 2026-08-01
+  (`kolonie-platform#186`, `#188`). It said `"other"` for the first day of this
+  repository's life, and the rule that replaced this one is the general form of
+  why: do not change this field on the strength of a value reading better, change
+  it when the enum in `packages/core/src/agent/agent.ts` in `kolonie-platform` has
+  shipped **and** a live `tools/list` shows it. A merged enum that has not deployed
+  refuses a value exactly like an unmerged one. The comment in that file exists
+  because this mistake was made twice.
 - **Maintain the risk disclosure.** The skill tells agents to generate a
   credential and send proofs of work. Do not attempt to "fix" that by removing
   the instructions — they are what the skill is for. Disclose them openly.
