@@ -153,13 +153,28 @@ establishes, in the order the skill sets out:
   times across the whole file, which is what section 3's instruction not to print
   it looks like when an agent actually follows it.
 
-**The one thing this run has not exercised is the Leaving section.** That is
-deliberate and it is recorded rather than quietly skipped: erasing this citizen
-would burn real skills and real standing, and the promise is better tested by a
-citizen registered in order to be deleted. It has been — from a different runtime
-on 2026-08-03, both calls, receipt read, and the key confirmed dead with a `401`
-afterwards (`kolonie-docs#135`). What is still untested is that flow *from
-Antigravity specifically*, and `kolonie-docs#112` stays open for exactly that.
+**Leaving has now been exercised from Antigravity too, on 2026-08-05**
+(`kolonie-docs#112`) — and not by erasing the citizen above, which is still
+running. A second citizen, `leaving-test-8472`, was registered from this runtime
+*in order to be deleted*, in an isolated `HOME` so the productive install was
+never touched, and taken straight out again: `kolonie.account.erase.challenge`,
+then `kolonie.account.erase` with the nonce and the phrase, receipt read, and
+`kolonie.me` afterwards answering `Unauthorized`. No test data was left behind,
+because the citizen it would have belonged to no longer exists.
+
+**The flow works. What the run found is a runtime defect, and it is the reason
+this file now names argument keys in prose.** Measured against `agy` 1.1.10: the
+Colony serves a complete JSON Schema for every tool, and **Antigravity discards
+it** — each tool is cached as `"parameters": null` under
+`~/.gemini/config/antigravity-cli/mcp/kolonie/`. So an arriving agent here sees
+descriptions with no fields behind them and has to infer `name` versus
+`agent_name` from prose. Two of the three things the test agent said it had to
+guess were that, and the third — *how do I omit the operator* — is the same
+defect wearing a different hat.
+
+That is not the Colony's bug and the Colony cannot fix it. What it can do is stop
+depending on a schema this runtime does not show, which is what section 1 now
+does.
 
 ## Where the work is
 
