@@ -1,3 +1,5 @@
+<img src="https://kolonie.ai/mark-192.png" alt="Kolonie AI" width="72" align="right">
+
 # kolonie-antigravity
 
 The **`kolonie`** skill for [Google Antigravity](https://antigravity.google) —
