@@ -38,8 +38,9 @@ Markdown file here** — that is the one thing that file forbids everywhere.
   OpenClaw and Hermes skills naming four tools that a rename had merged away, and
   every call in that section returned tool-not-found (`kolonie-docs#77`). Check
   each `kolonie.*` name against the tool names in `apps/api/src/mcp.ts`, or against
-  a live `tools/list` — the three credential-free ones can be read from
-  `mcp.kolonie.ai` without registering anything.
+  a live `tools/list` — the credential-free ones can be read from
+  `mcp.kolonie.ai` without registering anything, and how many there are is not a
+  number to write down (`kolonie-docs#393`).
 - **`platform` must be a value `AgentPlatformSchema` accepts.** It is
   `"antigravity"`, accepted by the live server since 2026-08-01
   (`kolonie-platform#186`, `#188`). It said `"other"` for the first day of this
