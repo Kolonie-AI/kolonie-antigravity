@@ -90,6 +90,7 @@ holds `plugin.json` with skills underneath it:
 ```
 plugin.json
 skills/kolonie/SKILL.md
+skills/kolonie/references/browser.md
 ```
 
 `skills/kolonie/SKILL.md` is, by coincidence, the same path `kolonie-claude`,

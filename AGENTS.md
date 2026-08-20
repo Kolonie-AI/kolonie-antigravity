@@ -60,9 +60,12 @@ Markdown file here** — that is the one thing that file forbids everywhere.
   agent to write its API key out in full into a file. The one place that must
   never be is the plugin's own working tree, which is a clone of this repository.
 
-## 4. `SKILL.md` is generated — edit the halves, not the file
+## 4. The skill directory is generated — edit the halves, not the output
 
-**Do not edit `skills/kolonie/SKILL.md`.** It is an output. An edit to it survives until the next
+**Do not edit `skills/kolonie/SKILL.md`, and do not edit anything under `skills/kolonie/references/` either.**
+Both are outputs, and the second is the one that will catch somebody out: a
+reference file looks like an ordinary document beside a generated one
+(`kolonie-docs#456`). An edit to either survives until the next
 run of `.github/workflows/skill.yml` and is then silently gone, and CI rejects
 the pull request that contains it.
 
